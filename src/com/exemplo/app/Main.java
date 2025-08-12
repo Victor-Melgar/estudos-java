@@ -37,28 +37,159 @@ public class Main {
 
         // // ---------------------------------------------------------------
 
+        // System.out.print("Digite um número: ");
+        // int numero = scanner.nextInt();
+
+        // int fatorial = 1;
+
+        // for (int i = 1; i <= numero; i++) {
+        //     fatorial *= i;
+        // }
+
+        // System.out.println("O fatorial de " + numero + " é: " + fatorial);
+
+        // scanner.close();
+
+        // // ---------------------------------------------------------------
+
+        // System.out.print("Digite os números separados por espaço: ");
+        // String[] numerosStr = scanner.nextLine().split(" ");
+        // int maior = Integer.MIN_VALUE;
+
+        // for (String numStr : numerosStr) {
+        //     int num = Integer.parseInt(numStr);
+        //     if (num > maior) {
+        //         maior = num;
+        //     }
+        // }
+        // System.out.println("O maior número é: " + maior);
+        // scanner.close();
+
+        // // ---------------------------------------------------------------
+
+        // System.out.println("""
+        // ********** OPÇÕES **********
+        // 1. Login
+        // 2. Cadastro
+        // 3. Listar cadastros
+        // 4. Sair
+        //         """);
+
+        // System.out.print("Digite a opção desejada: ");
+        // int opcao = scanner.nextInt();
+        
+        // if (opcao == 1) {
+        //     System.out.println("Digite o email para login: ");
+        //     String email = scanner.next();
+        //     System.out.println("Digite a senha para login: ");
+
+        // } else if (opcao == 2) {
+
+        // } else if (opcao == 3) {
+
+        // } else if (opcao == 4) {
+        //     System.out.println("Saindo...");
+        // } else {
+        //     System.out.println("Opção inválida!");
+        // }
+
+        // // ---------------------------------------------------------------
+
+        // final String SENHA_CORRETA = "1234";
+
+        // for (int tentativas = 3; tentativas > 0; tentativas--) {
+        //     System.out.print("Digite sua senha: ");
+        //     String senha = scanner.nextLine();
+
+        //     if (senha.equals(SENHA_CORRETA)) {
+        //         System.out.println("Senha correta! Acesso concedido!");
+        //         break;
+        //     } else if (tentativas > 1) {
+        //         System.out.println("Senha incorreta. Você tem " + (tentativas - 1) + " tentativas restantes.");
+        //     } else {
+        //         System.out.println("Conta bloqueada temporariamente.");
+        //     }
+        // }
+        // scanner.close();
+
+        // // ---------------------------------------------------------------
+
+        // String nome;
+        // do {
+        //     System.out.print("Digite seu nome: ");
+        //     nome = scanner.nextLine();
+        //     if (nome.length() < 3) {
+        //         System.out.println("Nome inválido. Digite novamente.");
+        //     }
+        // } while (nome.length() < 3);
+        // System.out.println("Nome \"" + nome + "\" cadastrado com sucesso!");
+        // scanner.close();
+
+        // // ---------------------------------------------------------------
+
+        // String numero;
+        // int negativos = 0;
+        // int positivos = 0;
+
+
+        // while(true) {
+        //     System.out.println("Digite um número (ou 'sair' para encerrar): ");
+        //     numero = scanner.nextLine();
+
+        //     if (numero.equalsIgnoreCase("sair")) {
+        //         break;
+        //     }
+
+        //     int valor = Integer.parseInt(numero);
+
+        //     if (valor >= 0) {
+        //         positivos++;
+        //     } else {
+        //         negativos++;
+        //     }
+        // }
+            
+        
+        //     System.out.println("Número positivos: " + positivos);
+        //     System.out.println("Número negativos: " + negativos);
+
+        // // ------------------------------------------------------------------
+
         System.out.print("Digite um número: ");
-        int numero = scanner.nextInt();
-
-        int fatorial = 1;
-
-        for (int i = 1; i <= numero; i++) {
-            fatorial *= i;
+        int limite = scanner.nextInt();
+        for (int i = 1; i <= limite; i++) {
+            if (i % 10 == 5) {
+                continue;
+            }
+            System.out.print(i + " ");
         }
-
-        System.out.println("O fatorial de " + numero + " é: " + fatorial);
-
         scanner.close();
 
-        // ---------------------------------------------------------------
+        // ----------------------------------------------------------------------
 
-        System.out.println("Digite os números separados por espaço: ");
-        String entrada = scanner.nextLine();
+        String[] convidados = {};
 
-        int 
+        while(true) {
+            System.out.println("Digite o nome do convidado (ou 'ver' para visualizar a lista, 'sair' para terminar): ");
+            String convidado = scanner.nextLine();
 
-        for (int i = 0; i < entrada.length(); i++) {
-            System.out.println(entrada);
+            if (convidado == "sair") {
+                System.out.println("Saindo do programa.");
+                break;
+            } else if (convidado == "ver") {
+                if (convidados.length == 0) {
+                    System.out.println("Nenhum convidado na lista.");
+                } else {
+                    System.out.println("Lista de convidados:");
+                    for (String c : convidados) {
+                        System.out.println("- " + c);
+                    }
+                }
+            } else {
+
+            }
         }
+
+
     }      
 }
