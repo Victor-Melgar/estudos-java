@@ -54,10 +54,10 @@ public class Variaveis {
 
         // -----------------------------------------------------------------
 
-        double consumoMedio = 12.5; // O carro faz 12,5 km por litro
-        double capacidadeTanque = 50; // O tanque tem capacidade para 50 litros
-        double combustivelAtual = 20; // Há 20 litros disponíveis
-        double distanciaViagem = 200; // A viagem planejada tem 200 km
+        double consumoMedio = 12.5;
+        double capacidadeTanque = 50;
+        double combustivelAtual = 20;
+        double distanciaViagem = 200;
 
         double autonomiaMaxima = consumoMedio * capacidadeTanque;
         double autonomiaAtual = combustivelAtual * consumoMedio;
