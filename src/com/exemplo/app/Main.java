@@ -1,5 +1,6 @@
 package com.exemplo.app;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -155,40 +156,52 @@ public class Main {
 
         // // ------------------------------------------------------------------
 
-        System.out.print("Digite um número: ");
-        int limite = scanner.nextInt();
-        for (int i = 1; i <= limite; i++) {
-            if (i % 10 == 5) {
+        // System.out.print("Digite um número: ");
+        // int limite = scanner.nextInt();
+        // for (int i = 1; i <= limite; i++) {
+        //     if (i % 10 == 5) {
+        //         continue;
+        //     }
+        //     System.out.print(i + " ");
+        // }
+        // scanner.close();
+
+        // // ----------------------------------------------------------------------
+ 
+        ArrayList<String> convidados = new ArrayList<>();
+ 
+        while (true) {
+            System.out.print("Digite o nome do convidado (ou 'ver' para visualizar a lista, 'sair' para terminar): ");
+            String nome = scanner.nextLine().trim();
+ 
+            if (nome.equalsIgnoreCase("sair")) {
+                System.out.println("Programa finalizado.");
+                break;
+            }
+ 
+            if (nome.equalsIgnoreCase("ver")) {
+                System.out.println("Lista atualizada de convidados: " + convidados);
                 continue;
             }
-            System.out.print(i + " ");
-        }
-        scanner.close();
-
-        // ----------------------------------------------------------------------
-
-        String[] convidados = {};
-
-        while(true) {
-            System.out.println("Digite o nome do convidado (ou 'ver' para visualizar a lista, 'sair' para terminar): ");
-            String convidado = scanner.nextLine();
-
-            if (convidado == "sair") {
-                System.out.println("Saindo do programa.");
-                break;
-            } else if (convidado == "ver") {
-                if (convidados.length == 0) {
-                    System.out.println("Nenhum convidado na lista.");
-                } else {
-                    System.out.println("Lista de convidados:");
-                    for (String c : convidados) {
-                        System.out.println("- " + c);
-                    }
+ 
+            boolean jaExiste = false;
+            for (String convidado : convidados) {
+                if (convidado.toLowerCase().equals(nome.toLowerCase())) {
+                    jaExiste = true;
+                    break;
                 }
-            } else {
-
             }
+ 
+            if (jaExiste) {
+                System.out.println("O nome " + nome + " já está na lista de convidados.");
+            } else {
+                convidados.add(nome);
+                System.out.println(nome + " foi adicionado à lista de convidados.");
+            }
+            
         }
+ 
+        scanner.close();
 
 
     }      
