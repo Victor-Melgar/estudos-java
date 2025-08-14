@@ -168,41 +168,104 @@ public class Main {
 
         // // ----------------------------------------------------------------------
  
-        ArrayList<String> convidados = new ArrayList<>();
+        // ArrayList<String> convidados = new ArrayList<>();
  
-        while (true) {
-            System.out.print("Digite o nome do convidado (ou 'ver' para visualizar a lista, 'sair' para terminar): ");
-            String nome = scanner.nextLine().trim();
+        // while (true) {
+        //     System.out.print("Digite o nome do convidado (ou 'ver' para visualizar a lista, 'sair' para terminar): ");
+        //     String nome = scanner.nextLine().trim();
  
-            if (nome.equalsIgnoreCase("sair")) {
-                System.out.println("Programa finalizado.");
-                break;
-            }
+        //     if (nome.equalsIgnoreCase("sair")) {
+        //         System.out.println("Programa finalizado.");
+        //         break;
+        //     }
  
-            if (nome.equalsIgnoreCase("ver")) {
-                System.out.println("Lista atualizada de convidados: " + convidados);
-                continue;
-            }
+        //     if (nome.equalsIgnoreCase("ver")) {
+        //         System.out.println("Lista atualizada de convidados: " + convidados);
+        //         continue;
+        //     }
  
-            boolean jaExiste = false;
-            for (String convidado : convidados) {
-                if (convidado.toLowerCase().equals(nome.toLowerCase())) {
-                    jaExiste = true;
-                    break;
-                }
-            }
+        //     boolean jaExiste = false;
+        //     for (String convidado : convidados) {
+        //         if (convidado.toLowerCase().equals(nome.toLowerCase())) {
+        //             jaExiste = true;
+        //             break;
+        //         }
+        //     }
  
-            if (jaExiste) {
-                System.out.println("O nome " + nome + " já está na lista de convidados.");
-            } else {
-                convidados.add(nome);
-                System.out.println(nome + " foi adicionado à lista de convidados.");
-            }
+        //     if (jaExiste) {
+        //         System.out.println("O nome " + nome + " já está na lista de convidados.");
+        //     } else {
+        //         convidados.add(nome);
+        //         System.out.println(nome + " foi adicionado à lista de convidados.");
+        //     }
             
-        }
+        // }
  
-        scanner.close();
+        // scanner.close();
 
+        // ----------------------------------------------------------------------
+
+        ArrayList<String> jogadores = new ArrayList<>();
+
+        while (true) {
+            System.out.println();
+            System.out.println("""
+            ********** OPÇÕES **********
+            1. Adicionar jogador
+            2. Listar jogadores
+            3. Logar jogador
+            4. Sair
+            """);
+
+            System.out.println("Digite a opção desejada: ");
+            int opcao = scanner.nextInt();
+            
+            if (opcao == 1) {
+                System.out.println("Digite o nome do jogador: ");
+                String nome = scanner.next();
+                
+                boolean jaExiste = false;
+                for (String jogador : jogadores) {
+                    if (jogador.toLowerCase().equals(nome.toLowerCase())) {
+                        jaExiste = true;
+                        break;
+                    }
+                }
+
+                if (jaExiste) {
+                    System.out.println("O jogador " + nome + " já está na lista.");
+                } else {
+                    jogadores.add(nome);
+                    System.out.println("Jogador " + nome + " adicionado com sucesso.");
+                }
+
+            } else if (opcao == 2) {
+                System.out.println("Lista de jogadores: " + jogadores);
+            } else if (opcao == 3) {
+                System.out.println("Digite o nome do jogador para logar: ");
+                String nome = scanner.next();
+
+                boolean encontrado = false;
+                for (String jogador : jogadores) {
+                    if (jogador.toLowerCase().equals(nome.toLowerCase())) {
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (encontrado) {
+                    System.out.println("Jogador " + nome + " logado com sucesso.");
+                } else {
+                    System.out.println("Jogador " + nome + " não encontrado.");
+                }
+
+            } else if (opcao == 4) {
+                System.out.println("Saindo...");
+                break;
+            } else {
+                System.out.println("Opção inválida!");
+            }
+        }
 
     }      
 }
