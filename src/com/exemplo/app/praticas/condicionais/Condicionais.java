@@ -111,8 +111,8 @@ public class Condicionais {
 
         // -----------------------------------------------------------------
 
-        System.out.print("Digite a idade do doador: ");      
-        int idade = scanner.nextInt();      
+        System.out.print("Digite a idade do doador: ");
+        int idade = scanner.nextInt();
 
         System.out.print("Digite o peso do doador (em kg): ");      
         double peso = scanner.nextDouble();   
