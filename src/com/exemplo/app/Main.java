@@ -29,9 +29,20 @@ public class Main {
         // System.out.println("Texto em maiúsculas: " + textoMaiusculo);
         // System.out.println("Texto em minúsculas: " + textoMinusculo);
 
-        // -------------------------------------------------------------
+        // // -------------------------------------------------------------
 
+        System.out.print("Digite o nome do arquivo: ");
+        String arquivo = scanner.nextLine();
         
+        int posicaoPonto = arquivo.lastIndexOf(".");
+        if (posicaoPonto != -1) {
+            String nomeSemExtensao = arquivo.substring(0, posicaoPonto);
+            System.out.println("Nome do arquivo sem extensão: " + nomeSemExtensao);
+        } else {
+            System.out.println("O arquivo não possui extensão.");
+        }
+        scanner.close();
+
 
     }      
 }
